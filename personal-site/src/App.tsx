@@ -18,6 +18,11 @@ function App() {
     window.open(url, '_blank');
   }
 
+  const mailTo = (e : Event, email: string) => () => {
+    window.location.href = email;
+    e.preventDefault();
+  }
+
 
 
   useEffect(() => { 
@@ -30,7 +35,7 @@ function App() {
       <header className="App-header">
       </header>
 
-      <div className='w-screen h-screen flex justify-between bg-gray-900'>
+      <div className='w-screen h-screen flex flex-wrap justify-between bg-gray-900'>
 
 
         <div className='px-12 py-4' >
@@ -44,10 +49,10 @@ function App() {
             <p>Born in late 90s, Raised in Hong Kong, Living in Toronto</p>
           </div>
 
-          <div className='flex flex-row text-white subpixel-antialiased font-mono '>
-            <div className='w-24 border-2 mx-2 my-1' >About</div>
-            <div className='w-24 border-2 mx-2 my-1' onClick={scrollToProject}>Project</div>
-            <div className='w-24 border-2 mx-2 my-1' onClick={scrollToContact}>Contact</div>
+          <div className='flex flex-row flex-wrap text-white subpixel-antialiased font-mono gap-5'>
+            <div className='min-w-24 border-2 my-1 px-3' >About</div>
+            <div className='min-w-24 border-2 my-1 px-3' onClick={scrollToProject}>Work Experience</div>
+            <div className='min-w-24 border-2 my-1 px-3' onClick={scrollToContact}>Contact</div>
           </div>
         </div>
         <div className='basis-4/12'>
@@ -57,7 +62,7 @@ function App() {
 
       <div className='h-screen bg-gray-900 px-12 py-42' ref={projectRef} >
         <div className='text-7xl subpixel-antialiased font-mono text-center py-4'>
-          <p className='text-white'>Project</p>
+          <p className='text-white'>Work Experience</p>
         </div>
 
         <div className='flex flex-wrap flex-row justify-around subpixel-antialiased font-mono py-4'>
@@ -111,18 +116,35 @@ function App() {
       </div>
 
 
-
-
-
-
+      
 
       <div className='h-screen bg-gray-900 px-12 py-42' ref={contactRef} >
-        <div className='text-7xl subpixel-antialiased font-mono text-center py-4'>
-          <p className='text-white'>About</p>
+        <div className='py-60'>
+          <div className='text-7xl subpixel-antialiased font-mono text-center py-4'>
+            <p className='text-white'>Get In Touch</p>
+          </div>
+          <div className='text-base text-white subpixel-antialiased font-mono text-center  py-4'>
+              <p>I am looking for any kind of new opportunites,</p>
+              <p>Let's have a chat and a decent cup of coffee.</p>
+          </div>
+
+          <div className='py-8'>
+            <a className="bg-transparent hover:bg-orange-500 text-white font-semibold hover:text-white py-4 px-4 border border-orange-500 hover:border-transparent rounded-bl-2xl rounded-tr-2xl text-base subpixel-antialiased font-mono text-center  py-4" href="mailto:maxchu0523@gmail.com">
+              Let's Go
+            </a>  
+          </div>
         </div>
 
 
+
+
       </div>
+
+
+
+
+
+
 
 
 
