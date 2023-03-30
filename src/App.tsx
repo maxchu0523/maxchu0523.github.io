@@ -10,9 +10,11 @@ import harilelaVip from '../src/media/harilelaVip.png';
 
 
 function App() {
+  const aboutMeRef = useRef<null | HTMLDivElement>(null);
   const projectRef = useRef<null | HTMLDivElement>(null);
   const contactRef = useRef<null | HTMLDivElement>(null);
 
+  const scrollToAboutMe = () => { aboutMeRef.current?.scrollIntoView({ behavior: 'smooth' }) };
   const scrollToProject = () => { projectRef.current?.scrollIntoView({ behavior: 'smooth' }) };
   const scrollToContact = () => { contactRef.current?.scrollIntoView({ behavior: 'smooth' }) };
 
@@ -21,15 +23,10 @@ function App() {
     window.open(url, '_blank');
   }
 
-  const mailTo = (e: Event, email: string) => () => {
-    window.location.href = email;
-    e.preventDefault();
-  }
-
 
 
   useEffect(() => {
-
+    document.title = 'Max Chu';
   }, [])
 
 
@@ -49,13 +46,13 @@ function App() {
               <div className='text-orange-500'>Max</div>
             </div>
             <div className='text-base text-white subpixel-antialiased font-mono text-left  py-4'>
-              <p>Full-Stack Web Developer, build Website, Hybird app, System</p>
+              <p>I am a Full-Stack Web Developer. I code Website, Hybird app and ERP System</p>
 
               <p>Born in late 90s, Raised in Hong Kong, Living in Toronto</p>
             </div>
 
             <div className='flex flex-row flex-wrap text-white subpixel-antialiased font-mono gap-4'>
-              <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' >About</div>
+              {/* <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToAboutMe}>About</div> */}
               <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToProject}>Work Experience</div>
               <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToContact}>Contact</div>
             </div>
@@ -75,7 +72,7 @@ function App() {
         </div>
 
         <div className='min-h-screen bg-gray-900 py-42' ref={projectRef} >
-          
+
           <div className='text-4xl md:text-7xl subpixel-antialiased font-mono text-center py-4'>
             <p className='text-white'>Work Experience</p>
           </div>
@@ -123,7 +120,6 @@ function App() {
               <p className='text-white'>Get In Touch</p>
             </div>
             <div className='text-base text-white subpixel-antialiased font-mono text-center  py-4'>
-              <p>I am looking for any kind of new opportunites,</p>
               <p>Let's have a chat and a decent cup of coffee.</p>
             </div>
 
