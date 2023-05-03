@@ -20,19 +20,11 @@ function App() {
   const scrollToProject = () => { projectRef.current?.scrollIntoView({ behavior: 'smooth' }) };
   const scrollToContact = () => { contactRef.current?.scrollIntoView({ behavior: 'smooth' }) };
 
-  
+
   const redirectTo = (url: string) => () => {
     window.open(url, '_blank');
   }
 
-
-  const navigate = useNavigate();
-  const redirectTodo = async () => {
-    return navigate("/to-do-list");
-  };
-
-
-  
 
   useEffect(() => {
     document.title = 'Max Chu';
@@ -55,9 +47,9 @@ function App() {
               <div className='text-orange-500'>Max</div>
             </div>
             <div className='contentText text-left  py-4'>
-              <p>I am a Full-Stack Web Developer. I code Website, Hybird app and ERP System</p>
+              <p>I am a Web Developer. I code Websites, Hybird app and ERP System</p>
 
-              <p>Born in late 90s, Raised in Hong Kong, Living in Toronto</p>
+              <p>Born in the late 90s, Raised in Hong Kong, Living in Toronto</p>
             </div>
 
             <div className='flex flex-row flex-wrap text-white subpixel-antialiased font-mono gap-4'>
@@ -86,28 +78,24 @@ function App() {
           </div>
 
           <div className='md:flex'>
-
-            <div className='contentText text-left py-8 basis-1/2'>
-              <div className='px-4 py-4 md:px-28 md:py-24'>
-                <p>Hi I am Max, a full-stack web developer in Toronto. As a full-stack developer, I get involved in all aspects of the development process and work with various languages and tools. It keeps me engaged and constantly learning. I also have a passion for creating intuitive UX. It brings me a sense of accomplishment when seeing users enjoy interacting with my work</p>
+            {/* py-4 md:py-24 */}
+            <div className='contentText text-left basis-1/2 py-8'>
+              <div className='px-4 md:px-28'>
+                <p>Hi, I am Max, a Web developer in Toronto. I enjoy participating in all aspects of the development process and exploring new cool technologies. UI/UX is also one of my favourite things. Seeing users interact with my work gives me a sense of accomplishment</p>
               </div>
             </div>
 
-            <div>
-              <div className='contentText bold px-4 md:px-28 underline underline-offset-2'>
-                <p>Tool</p>
-              </div>
-              <div className='contentText text-left'>
-                <div className='px-4 md:px-28'>
-                  <div className='box=content  flex gap-4 flex-wrap'>
-                    <div className='bg-gray-600'>React</div>
-                    <div className='bg-gray-600'>Angular</div>
-                    <div className='bg-gray-600'>NextJs</div>
-                    <div className='bg-gray-600'>Ionic</div>
-                    <div className='bg-gray-600'>Php</div>
-                    <div className='bg-gray-600'>Java</div>
-                    <div className='bg-gray-600'>C#</div>
-                  </div>
+            <div className='contentText text-left basis-1/2 py-8'>
+              <div className='px-4 md:px-28'>
+                <p className=' underline underline-offset-2'>Tools I use</p>
+                <div className='box=content flex gap-4 flex-wrap py-2'>
+                  <div className='bg-gray-600'>React</div>
+                  <div className='bg-gray-600'>Angular</div>
+                  <div className='bg-gray-600'>NextJs</div>
+                  <div className='bg-gray-600'>Ionic</div>
+                  <div className='bg-gray-600'>Php</div>
+                  <div className='bg-gray-600'>Java</div>
+                  <div className='bg-gray-600'>C#</div>
                 </div>
               </div>
             </div>
@@ -158,10 +146,10 @@ function App() {
           <div className='md:flex flex-wrap flex-row gap-8 justify-around subpixel-antialiased font-mono content-center pl-8 pr-8'>
 
             <div className='basis-1/4 pb-8'>
-              <img className='h-48 rounded-md  w-max my-4' src={todoList} onClick={() => {redirectTodo()}} ></img>
+              <img className='h-48 rounded-md  w-max my-4' src={todoList} onClick={redirectTo('/to-do-list')}></img>
               <p className='contentText font-bold text-left'>Todo App</p>
               <div className='contentText text-left'>
-                <p>A experimental App list build with Redux and Tailwind CSS</p>
+                <p>A experimental todo list build with React, Redux and Tailwindcss</p>
               </div>
             </div>
 
