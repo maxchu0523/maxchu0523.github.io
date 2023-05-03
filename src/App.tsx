@@ -6,6 +6,8 @@ import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
 import myPodium from '../src/media/myPodium.png';
 import actnow from '../src/media/actnowmh.png';
 import harilelaVip from '../src/media/harilelaVip.png';
+import todoList from '../src/media/todoList.png';
+import { redirect, useNavigate } from "react-router-dom";
 
 
 
@@ -18,12 +20,19 @@ function App() {
   const scrollToProject = () => { projectRef.current?.scrollIntoView({ behavior: 'smooth' }) };
   const scrollToContact = () => { contactRef.current?.scrollIntoView({ behavior: 'smooth' }) };
 
-
+  
   const redirectTo = (url: string) => () => {
     window.open(url, '_blank');
   }
 
 
+  const navigate = useNavigate();
+  const redirectTodo = async () => {
+    return navigate("/to-do-list");
+  };
+
+
+  
 
   useEffect(() => {
     document.title = 'Max Chu';
@@ -75,32 +84,34 @@ function App() {
           <div className='headerText text-center pb-4 pt-12'>
             <p className='text-white'>About Me</p>
           </div>
-          <div className='contentText text-left py-8'>
-            <div className='px-4 py-4 md:px-28 md:py-24'>
-              <p>My name is Yat-Long Chu, you can also call me Max. I am a full-stack web developer in Toronto. As a full-stack developer, I get involved in all aspects of the development process and work with various languages and tools. It keeps me engaged and constantly learning. I also have a passion for creating intuitive UX. It brings me a sense of accomplishment when seeing users enjoy interacting with my work</p>
 
-              
+          <div className='md:flex'>
+
+            <div className='contentText text-left py-8 basis-1/2'>
+              <div className='px-4 py-4 md:px-28 md:py-24'>
+                <p>Hi I am Max, a full-stack web developer in Toronto. As a full-stack developer, I get involved in all aspects of the development process and work with various languages and tools. It keeps me engaged and constantly learning. I also have a passion for creating intuitive UX. It brings me a sense of accomplishment when seeing users enjoy interacting with my work</p>
+              </div>
             </div>
-          </div>
 
-
-          <div className='contentText bold px-4 md:px-28 underline underline-offset-2'>
-            <p>Tool</p>
-          </div>
-          <div className='contentText text-left'>
-            <div className='px-4 md:px-28'>
-              <div className='box=content  flex gap-4 flex-wrap'>
-                <div className='bg-gray-600'>React</div>
-                <div className='bg-gray-600'>Angular</div>
-                <div className='bg-gray-600'>NextJs</div>
-                <div className='bg-gray-600'>Ionic</div>
-                <div className='bg-gray-600'>Php</div>
-                <div className='bg-gray-600'>Java</div>
-                <div className='bg-gray-600'>C#</div>
+            <div>
+              <div className='contentText bold px-4 md:px-28 underline underline-offset-2'>
+                <p>Tool</p>
+              </div>
+              <div className='contentText text-left'>
+                <div className='px-4 md:px-28'>
+                  <div className='box=content  flex gap-4 flex-wrap'>
+                    <div className='bg-gray-600'>React</div>
+                    <div className='bg-gray-600'>Angular</div>
+                    <div className='bg-gray-600'>NextJs</div>
+                    <div className='bg-gray-600'>Ionic</div>
+                    <div className='bg-gray-600'>Php</div>
+                    <div className='bg-gray-600'>Java</div>
+                    <div className='bg-gray-600'>C#</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
         </div>
 
         <div className='min-h-screen bg-gray-900 py-42' ref={projectRef} >
@@ -109,10 +120,9 @@ function App() {
             <p>Work Experience</p>
           </div>
 
+          <div className='md:flex flex-wrap flex-row gap-8 justify-around subpixel-antialiased font-mono content-center pl-8 pr-8'>
 
-          <div className='md:flex flex-wrap flex-row justify-around subpixel-antialiased font-mono content-center pl-8 pr-8'>
-
-            <div className='basis-1/3 pb-8'>
+            <div className='basis-1/4 pb-8'>
               <img className='h-48 rounded-md  w-max my-4' src={myPodium} onClick={redirectTo('https://www.oocllogistics.com/eng/ourservices/eservices/podium/Pages/default.aspx')}></img>
               <p className='contentText font-bold text-left'>My Podium</p>
               <div className='contentText text-left'>
@@ -120,10 +130,7 @@ function App() {
               </div>
             </div>
 
-
-
-
-            <div className='basis-1/3 pb-8'>
+            <div className='basis-1/4 pb-8'>
               <img className='h-48 rounded-md  w-max my-4' src={actnow} onClick={redirectTo('https://actnowmh.com/')}></img>
               <p className='contentText font-bold text-left'>Missionary Holiday</p>
               <div className='contentText text-left'>
@@ -132,13 +139,48 @@ function App() {
             </div>
 
 
-            <div className='basis-1/3 pb-8'>
+            <div className='basis-1/4 pb-8'>
               <img className='h-48 rounded-md  w-max my-4' src={harilelaVip} onClick={redirectTo('https://apps.apple.com/us/app/harilela-vip/id1571846151')}></img>
               <p className='contentText font-bold text-left'>Harilela VIP </p>
               <div className='contentText text-left'>
                 <p>A private VIP App for friends and family of the Harilela Family to enjoy benefits and discounts at the Harilela Hotels in Hong Kong</p>
               </div>
             </div>
+
+          </div>
+
+
+
+          <div className='headerText text-white text-center py-12'>
+            <p>Projects</p>
+          </div>
+
+          <div className='md:flex flex-wrap flex-row gap-8 justify-around subpixel-antialiased font-mono content-center pl-8 pr-8'>
+
+            <div className='basis-1/4 pb-8'>
+              <img className='h-48 rounded-md  w-max my-4' src={todoList} onClick={() => {redirectTodo()}} ></img>
+              <p className='contentText font-bold text-left'>Todo App</p>
+              <div className='contentText text-left'>
+                <p>A experimental App list build with Redux and Tailwind CSS</p>
+              </div>
+            </div>
+
+            {/* <div className='basis-1/4 pb-8'>
+              <img className='h-48 rounded-md  w-max my-4' src={actnow} onClick={redirectTo('https://actnowmh.com/')}></img>
+              <p className='contentText font-bold text-left'>Missionary Holiday</p>
+              <div className='contentText text-left'>
+                <p>Grasp all the information related to christian mission trips, offering trips ranging from two months to two years</p>
+              </div>
+            </div>
+
+
+            <div className='basis-1/4 pb-8'>
+              <img className='h-48 rounded-md  w-max my-4' src={harilelaVip} onClick={redirectTo('https://apps.apple.com/us/app/harilela-vip/id1571846151')}></img>
+              <p className='contentText font-bold text-left'>Harilela VIP </p>
+              <div className='contentText text-left'>
+                <p>A private VIP App for friends and family of the Harilela Family to enjoy benefits and discounts at the Harilela Hotels in Hong Kong</p>
+              </div>
+            </div> */}
 
           </div>
         </div>
