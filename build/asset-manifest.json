@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.831a5a11.css",
+    "main.js": "/static/js/main.280a8970.js",
+    "static/js/787.3ba5e41c.chunk.js": "/static/js/787.3ba5e41c.chunk.js",
+    "static/media/myPodium.png": "/static/media/myPodium.c3b302ea2a3ff5b52cbc.png",
+    "static/media/actnowmh.png": "/static/media/actnowmh.53ee8612f41e3633aeb3.png",
+    "static/media/harilelaVip.png": "/static/media/harilelaVip.5ba9764de5901a257084.png",
+    "static/media/todoList.png": "/static/media/todoList.bd49dd9fc103109c1285.png",
+    "index.html": "/index.html",
+    "main.831a5a11.css.map": "/static/css/main.831a5a11.css.map",
+    "main.280a8970.js.map": "/static/js/main.280a8970.js.map",
+    "787.3ba5e41c.chunk.js.map": "/static/js/787.3ba5e41c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.831a5a11.css",
+    "static/js/main.280a8970.js"
+  ]
+}
