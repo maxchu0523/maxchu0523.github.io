@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 
 export interface ITodoItem {
     id: string;
@@ -5,3 +6,12 @@ export interface ITodoItem {
     completed: boolean;
   }
   
+
+export interface IProjectCard {
+  projectName: string,
+  projectDesription?: string,
+  sitePath?: string,
+  repositoryPath?: string,
+  imagePath?: string;
+  techStackIcons?: ReactNode[];
+}

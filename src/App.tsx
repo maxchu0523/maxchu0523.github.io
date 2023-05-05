@@ -2,12 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faReact, faPhp, faLinkedinIn, faGithub, faAngular, faJava, faJs ,faWhatsapp} from '@fortawesome/free-brands-svg-icons'
 import myPodium from '../src/media/myPodium.png';
 import actnow from '../src/media/actnowmh.png';
 import harilelaVip from '../src/media/harilelaVip.png';
-import todoList from '../src/media/todoList.png';
-import { redirect, useNavigate } from "react-router-dom";
+import battleOfHongKong from '../src/media/battleOfHongKong.png';
+import ProjectCard from './components/project-card';
+import maxPortfolio from './media/maxPorfolio.png';
 
 
 
@@ -47,23 +48,25 @@ function App() {
               <div className='text-orange-500'>Max</div>
             </div>
             <div className='contentText text-left  py-4'>
-              <p>I am a Web Developer. I code Websites, Hybird app and ERP System</p>
+              <p>I am a Web Developer. I code Websites, Hybird app and ERP Systemasdf</p>
 
               <p>Born in the late 90s, Raised in Hong Kong, Living in Toronto</p>
             </div>
 
             <div className='flex flex-row flex-wrap text-white subpixel-antialiased font-mono gap-4'>
               <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToAboutMe}>About</div>
-              <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToProject}>Work</div>
+              <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToProject}>Work & Project</div>
               <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToContact}>Contact</div>
             </div>
 
             <div className='flex flex-row flex-wrap text-white subpixel-antialiased font-mono gap-5 py-4 y-4'>
-              <FontAwesomeIcon icon={faLinkedinIn} onClick={redirectTo('https://www.linkedin.com/in/max-chu-06b944181/')} className='cursor-pointer hover:scale-150 hover:rotate-12' />
-              <FontAwesomeIcon icon={faGithub} onClick={redirectTo('https://github.com/maxchu0523')} className='cursor-pointer hover:scale-150 hover:rotate-12' />
+              <FontAwesomeIcon icon={faLinkedinIn} onClick={redirectTo('https://www.linkedin.com/in/max-yat-long-chu-06b944181/')} className='cursor-pointer hover:scale-125 ' />
+              <FontAwesomeIcon icon={faGithub} onClick={redirectTo('https://github.com/maxchu0523')} className='cursor-pointer hover:scale-125' />
             </div>
 
           </div>
+
+
 
           {/* <p>Full-Stack Web Developer, ex-Motorcyclist, still a enthusiast</p> */}
 
@@ -105,70 +108,55 @@ function App() {
         <div className='min-h-screen bg-gray-900 py-42' ref={projectRef} >
 
           <div className='headerText text-white text-center py-12'>
-            <p>Work Experience</p>
+            <p>Works and Projects</p>
           </div>
 
           <div className='md:flex flex-wrap flex-row gap-8 justify-around subpixel-antialiased font-mono content-center pl-8 pr-8'>
 
-            <div className='basis-1/4 pb-8'>
-              <img className='h-48 rounded-md  w-max my-4' src={myPodium} onClick={redirectTo('https://www.oocllogistics.com/eng/ourservices/eservices/podium/Pages/default.aspx')}></img>
-              <p className='contentText font-bold text-left'>My Podium</p>
-              <div className='contentText text-left'>
-                <p>Module-based International Supply Chain Management IT platform</p>
-              </div>
-            </div>
-
-            <div className='basis-1/4 pb-8'>
-              <img className='h-48 rounded-md  w-max my-4' src={actnow} onClick={redirectTo('https://actnowmh.com/')}></img>
-              <p className='contentText font-bold text-left'>Missionary Holiday</p>
-              <div className='contentText text-left'>
-                <p>Grasp all the information related to christian mission trips, offering trips ranging from two months to two years</p>
-              </div>
-            </div>
-
-
-            <div className='basis-1/4 pb-8'>
-              <img className='h-48 rounded-md  w-max my-4' src={harilelaVip} onClick={redirectTo('https://apps.apple.com/us/app/harilela-vip/id1571846151')}></img>
-              <p className='contentText font-bold text-left'>Harilela VIP </p>
-              <div className='contentText text-left'>
-                <p>A private VIP App for friends and family of the Harilela Family to enjoy benefits and discounts at the Harilela Hotels in Hong Kong</p>
-              </div>
-            </div>
-
-          </div>
-
-
-
-          <div className='headerText text-white text-center py-12'>
-            <p>Projects</p>
-          </div>
-
-          <div className='md:flex flex-wrap flex-row gap-8 justify-around subpixel-antialiased font-mono content-center pl-8 pr-8'>
-
-            <div className='basis-1/4 pb-8'>
+            {/* <div className='basis-1/4 pb-8'>
               <img className='h-48 rounded-md  w-max my-4' src={todoList} onClick={redirectTo('/to-do-list')}></img>
               <p className='contentText font-bold text-left'>Todo App</p>
               <div className='contentText text-left'>
                 <p>A experimental todo list build with React, Redux and Tailwindcss</p>
               </div>
-            </div>
-
-            {/* <div className='basis-1/4 pb-8'>
-              <img className='h-48 rounded-md  w-max my-4' src={actnow} onClick={redirectTo('https://actnowmh.com/')}></img>
-              <p className='contentText font-bold text-left'>Missionary Holiday</p>
-              <div className='contentText text-left'>
-                <p>Grasp all the information related to christian mission trips, offering trips ranging from two months to two years</p>
-              </div>
-            </div>
-
-
-            <div className='basis-1/4 pb-8'>
-              <img className='h-48 rounded-md  w-max my-4' src={harilelaVip} onClick={redirectTo('https://apps.apple.com/us/app/harilela-vip/id1571846151')}></img>
-              <p className='contentText font-bold text-left'>Harilela VIP </p>
-              <div className='contentText text-left'>
-                <p>A private VIP App for friends and family of the Harilela Family to enjoy benefits and discounts at the Harilela Hotels in Hong Kong</p>
-              </div>
             </div> */}
+
+            <ProjectCard
+              projectName={"My Podium"} projectDesription={"Module-based International Supply Chain Management IT platform"}
+              sitePath={"https://www.oocllogistics.com/eng/ourservices/eservices/podium/Pages/default.aspx"}
+              imagePath={myPodium}
+              techStackIcons={[<FontAwesomeIcon icon={faAngular} size="xl" />, <FontAwesomeIcon icon={faJava} size="xl" />, <FontAwesomeIcon icon={faJs} size="xl" />]}
+            ></ProjectCard>
+
+            <ProjectCard
+              projectName={"My Website"} projectDesription={"The site you are browsing, Bravo!"}
+              sitePath={"https://maxchu0523.github.io"}
+              imagePath={maxPortfolio}
+              repositoryPath= {'https://github.com/maxchu0523/maxchu0523.github.io'}
+              techStackIcons={[<FontAwesomeIcon icon={faReact} size="xl" />, <FontAwesomeIcon icon={faJs} size="xl" />]}
+            ></ProjectCard> 
+
+            <ProjectCard
+              projectName={"Missionary Holiday"} projectDesription={"Grasp all the information related to christian mission trips, offering trips ranging from two months to two years"}
+              sitePath={"https://actnowmh.com/"}
+              imagePath={actnow}
+              techStackIcons={[<FontAwesomeIcon icon={faReact} size="xl" />, <FontAwesomeIcon icon={faPhp} size="xl" />, <FontAwesomeIcon icon={faJs} size="xl" />]}
+            ></ProjectCard>
+
+            <ProjectCard
+              projectName={"Battle Of Hong Kong"} projectDesription={"A website that provides information and infographic about the Battle of Hong Kong during World War II."}
+              sitePath={"https://maxchu0523.github.io/Battle-of-Hong-Kong/"}
+              imagePath={battleOfHongKong}
+              repositoryPath={'https://github.com/maxchu0523/Battle-of-Hong-Kong'}
+              techStackIcons={[<FontAwesomeIcon icon={faReact} size="xl" />, <FontAwesomeIcon icon={faJs} size="xl" />]}
+            ></ProjectCard> 
+
+            <ProjectCard
+              projectName={"Harilela VIP"} projectDesription={"A private VIP App for friends and family of the Harilela Family to enjoy benefits and discounts at the Harilela Hotels in Hong Kong"}
+              sitePath={"https://apps.apple.com/us/app/harilela-vip/id1571846151"}
+              imagePath={harilelaVip}
+              techStackIcons={[<FontAwesomeIcon icon={faAngular} size="xl" />, <FontAwesomeIcon icon={faPhp} size="xl" />, <FontAwesomeIcon icon={faJs} size="xl" />]}
+            ></ProjectCard>
 
           </div>
         </div>
@@ -190,8 +178,9 @@ function App() {
             </a>
           </div>
           <div className='flex flex-row flex-wrap text-white subpixel-antialiased font-mono gap-5 py-4 y-4 justify-center'>
-            <FontAwesomeIcon icon={faLinkedinIn} onClick={redirectTo('https://www.linkedin.com/in/max-chu-06b944181/')} className='cursor-pointer hover:scale-150 hover:rotate-12' />
-            <FontAwesomeIcon icon={faGithub} onClick={redirectTo('https://github.com/maxchu0523')} className='cursor-pointer hover:scale-150 hover:rotate-12' />
+            <FontAwesomeIcon icon={faLinkedinIn} onClick={redirectTo('https://www.linkedin.com/in/max-yat-long-chu-06b944181/')} className='cursor-pointer hover:scale-125' />
+            <FontAwesomeIcon icon={faGithub} onClick={redirectTo('https://github.com/maxchu0523')} className='cursor-pointer hover:scale-125' />
+            <FontAwesomeIcon icon={faWhatsapp} onClick={redirectTo('https://wa.me/14379860390')} className='cursor-pointer hover:scale-125' />
           </div>
 
 
