@@ -2,13 +2,14 @@ import React, { useEffect, useRef } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faReact, faPhp, faLinkedinIn, faGithub, faAngular, faJava, faJs ,faWhatsapp} from '@fortawesome/free-brands-svg-icons'
+import { faReact, faPhp, faLinkedinIn, faGithub, faAngular, faJava, faJs, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import myPodium from '../src/media/myPodium.png';
 import actnow from '../src/media/actnowmh.png';
 import harilelaVip from '../src/media/harilelaVip.png';
 import battleOfHongKong from '../src/media/battleOfHongKong.png';
 import ProjectCard from './components/project-card';
 import maxPortfolio from './media/maxPorfolio.png';
+import motocycleing from './media/motorcycling.jpg';
 
 
 
@@ -39,8 +40,8 @@ function App() {
 
       <div className='bg-gray-900 w-min-screen w-full'>
 
-        <div className='min-h-screen flex flex-wrap justify-between py-42'>
-          <div className='px-4 py-4 md:px-28 md:py-24' >
+        <div className=' min-h-screen sm:h-min-screen md:flex flex-wrap py-42'>
+          <div className='pl-4 py-4 md:pl-28 md:py-24 basis-1/2' >
 
 
             <div className='headerText text-left py-8'>
@@ -48,14 +49,26 @@ function App() {
               <div className='text-orange-500'>Max</div>
             </div>
             <div className='contentText text-left  py-4'>
-              <p>I am a Web Developer. I code Websites, Hybird app and ERP Systemasdf</p>
+              <p>Welcome to my page! I love exploring and using new technologies. I also enjoy seeing users interact with my work. </p>
 
-              <p>Born in the late 90s, Raised in Hong Kong, Living in Toronto</p>
             </div>
 
+            <div className='py-4 contentText'>
+              <p className=' underline underline-offset-2 '>Tools I use</p>
+              <div className='box=content flex gap-4 flex-wrap py-2'>
+                <div>React</div>
+                <div>Angular</div>
+                <div>JavaScript</div>
+                <div>Php</div>
+                <div>Java</div>
+                <div>C#</div>
+              </div>
+            </div>
+
+
             <div className='flex flex-row flex-wrap text-white subpixel-antialiased font-mono gap-4'>
-              <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToAboutMe}>About</div>
-              <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToProject}>Work & Project</div>
+              {/* <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToAboutMe}>About</div> */}
+              <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToProject}>Works & Projects</div>
               <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToContact}>Contact</div>
             </div>
 
@@ -70,18 +83,38 @@ function App() {
 
           {/* <p>Full-Stack Web Developer, ex-Motorcyclist, still a enthusiast</p> */}
 
-          <div className='basis-4/12'>
-            {/* <img src={me} /> */}
+          <div className='basis-1/2'>
+
+
+            <div className='px-4 py-4 md:py-32 md:px-32 ' ref={aboutMeRef} >
+              <div className="collapse collapse-plus " onClick={scrollToAboutMe}>
+                <input type="checkbox" className="peer" />
+                <div className="collapse-title contentText text-lg font-bold md:text-xl bg-orange-500 text-white peer-checked:bg-orange-500 peer-checked:text-white">
+                  More About Me
+                </div>
+                <div className="collapse-content contentText bg-primary bg-orange-500 text-white peer-checked:bg-orange-500 peer-checked:text-white">
+                  <p className='py-4'>Born and raised in Hong Kong🇭🇰, now living in Toronto🇨🇦</p>
+                  <p className='underline underline-offset-2 '>Things I love</p>
+                  <li>Learning Japanese 🇯🇵</li>
+                  <li>Travelling 🧳</li>
+                  <li>Working on UI/UX 🖥️</li>
+                  <li>And my favourite is motorcycling! 🏍️</li>
+                  <img className='w-9/12 p-4' src={motocycleing}></img>
+
+
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <div className='min-h-screen bg-gray-900 py-42' ref={aboutMeRef} >
+        {/* <div className='min-h-screen bg-gray-900 py-42' ref={aboutMeRef} >
           <div className='headerText text-center pb-4 pt-12'>
             <p className='text-white'>About Me</p>
           </div>
 
           <div className='md:flex'>
-            {/* py-4 md:py-24 */}
             <div className='contentText text-left basis-1/2 py-8'>
               <div className='px-4 md:px-28'>
                 <p>Hi, I am Max, a Web developer in Toronto. I enjoy participating in all aspects of the development process and exploring new cool technologies. UI/UX is also one of my favourite things. Seeing users interact with my work gives me a sense of accomplishment</p>
@@ -103,15 +136,15 @@ function App() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className='min-h-screen bg-gray-900 py-42' ref={projectRef} >
 
           <div className='headerText text-white text-center py-12'>
-            <p>Works and Projects</p>
+            <p>Works & Projects</p>
           </div>
 
-          <div className='md:flex flex-wrap flex-row gap-8 justify-around subpixel-antialiased font-mono content-center pl-8 pr-8'>
+          <div className='md:flex flex-wrap flex-row justify-start subpixel-antialiased font-mono content-center pl-4 pr-4'>
 
             {/* <div className='basis-1/4 pb-8'>
               <img className='h-48 rounded-md  w-max my-4' src={todoList} onClick={redirectTo('/to-do-list')}></img>
@@ -120,44 +153,52 @@ function App() {
                 <p>A experimental todo list build with React, Redux and Tailwindcss</p>
               </div>
             </div> */}
+            <div className='basis-1/3 pb-4 md:p-16'>
+              <ProjectCard
+                projectName={"My Podium"} projectDesription={"Module-based International Supply Chain Management IT platform"}
+                sitePath={"https://www.oocllogistics.com/eng/ourservices/eservices/podium/Pages/default.aspx"}
+                imagePath={myPodium}
+                techStackIcons={[<FontAwesomeIcon icon={faAngular} size="xl" />, <FontAwesomeIcon icon={faJava} size="xl" />, <FontAwesomeIcon icon={faJs} size="xl" />]}
+              ></ProjectCard>
+            </div>
 
-            <ProjectCard
-              projectName={"My Podium"} projectDesription={"Module-based International Supply Chain Management IT platform"}
-              sitePath={"https://www.oocllogistics.com/eng/ourservices/eservices/podium/Pages/default.aspx"}
-              imagePath={myPodium}
-              techStackIcons={[<FontAwesomeIcon icon={faAngular} size="xl" />, <FontAwesomeIcon icon={faJava} size="xl" />, <FontAwesomeIcon icon={faJs} size="xl" />]}
-            ></ProjectCard>
+            <div className='basis-1/3 pb-4 md:p-16'>
+              <ProjectCard
+                projectName={"My Website"} projectDesription={"The site you are browsing, Bravo!"}
+                sitePath={"https://maxchu0523.github.io"}
+                imagePath={maxPortfolio}
+                repositoryPath={'https://github.com/maxchu0523/maxchu0523.github.io'}
+                techStackIcons={[<FontAwesomeIcon icon={faReact} size="xl" />, <FontAwesomeIcon icon={faJs} size="xl" />]}
+              ></ProjectCard>
+            </div>
 
-            <ProjectCard
-              projectName={"My Website"} projectDesription={"The site you are browsing, Bravo!"}
-              sitePath={"https://maxchu0523.github.io"}
-              imagePath={maxPortfolio}
-              repositoryPath= {'https://github.com/maxchu0523/maxchu0523.github.io'}
-              techStackIcons={[<FontAwesomeIcon icon={faReact} size="xl" />, <FontAwesomeIcon icon={faJs} size="xl" />]}
-            ></ProjectCard> 
+            <div className='basis-1/3 pb-4 md:p-16'>
+              <ProjectCard
+                projectName={"Missionary Holiday"} projectDesription={"Grasp all the information related to christian mission trips, offering trips ranging from two months to two years"}
+                sitePath={"https://actnowmh.com/"}
+                imagePath={actnow}
+                techStackIcons={[<FontAwesomeIcon icon={faReact} size="xl" />, <FontAwesomeIcon icon={faPhp} size="xl" />, <FontAwesomeIcon icon={faJs} size="xl" />]}
+              ></ProjectCard>
+            </div>
 
-            <ProjectCard
-              projectName={"Missionary Holiday"} projectDesription={"Grasp all the information related to christian mission trips, offering trips ranging from two months to two years"}
-              sitePath={"https://actnowmh.com/"}
-              imagePath={actnow}
-              techStackIcons={[<FontAwesomeIcon icon={faReact} size="xl" />, <FontAwesomeIcon icon={faPhp} size="xl" />, <FontAwesomeIcon icon={faJs} size="xl" />]}
-            ></ProjectCard>
+            <div className='basis-1/3 pb-4 md:p-16'>
+              <ProjectCard
+                projectName={"Battle Of Hong Kong"} projectDesription={"A website that provides information and infographic about the Battle of Hong Kong during World War II."}
+                sitePath={"https://maxchu0523.github.io/Battle-of-Hong-Kong/"}
+                imagePath={battleOfHongKong}
+                repositoryPath={'https://github.com/maxchu0523/Battle-of-Hong-Kong'}
+                techStackIcons={[<FontAwesomeIcon icon={faReact} size="xl" />, <FontAwesomeIcon icon={faJs} size="xl" />]}
+              ></ProjectCard>
+            </div>
 
-            <ProjectCard
-              projectName={"Battle Of Hong Kong"} projectDesription={"A website that provides information and infographic about the Battle of Hong Kong during World War II."}
-              sitePath={"https://maxchu0523.github.io/Battle-of-Hong-Kong/"}
-              imagePath={battleOfHongKong}
-              repositoryPath={'https://github.com/maxchu0523/Battle-of-Hong-Kong'}
-              techStackIcons={[<FontAwesomeIcon icon={faReact} size="xl" />, <FontAwesomeIcon icon={faJs} size="xl" />]}
-            ></ProjectCard> 
-
-            <ProjectCard
-              projectName={"Harilela VIP"} projectDesription={"A private VIP App for friends and family of the Harilela Family to enjoy benefits and discounts at the Harilela Hotels in Hong Kong"}
-              sitePath={"https://apps.apple.com/us/app/harilela-vip/id1571846151"}
-              imagePath={harilelaVip}
-              techStackIcons={[<FontAwesomeIcon icon={faAngular} size="xl" />, <FontAwesomeIcon icon={faPhp} size="xl" />, <FontAwesomeIcon icon={faJs} size="xl" />]}
-            ></ProjectCard>
-
+            <div className='basis-1/3 pb-4 md:p-16'>
+              <ProjectCard
+                projectName={"Harilela VIP"} projectDesription={"A private VIP App for friends and family of the Harilela Family to enjoy benefits and discounts at the Harilela Hotels in Hong Kong"}
+                sitePath={"https://apps.apple.com/us/app/harilela-vip/id1571846151"}
+                imagePath={harilelaVip}
+                techStackIcons={[<FontAwesomeIcon icon={faAngular} size="xl" />, <FontAwesomeIcon icon={faPhp} size="xl" />, <FontAwesomeIcon icon={faJs} size="xl" />]}
+              ></ProjectCard>
+            </div>
           </div>
         </div>
 
@@ -180,7 +221,6 @@ function App() {
           <div className='flex flex-row flex-wrap text-white subpixel-antialiased font-mono gap-5 py-4 y-4 justify-center'>
             <FontAwesomeIcon icon={faLinkedinIn} onClick={redirectTo('https://www.linkedin.com/in/max-yat-long-chu-06b944181/')} className='cursor-pointer hover:scale-125' />
             <FontAwesomeIcon icon={faGithub} onClick={redirectTo('https://github.com/maxchu0523')} className='cursor-pointer hover:scale-125' />
-            <FontAwesomeIcon icon={faWhatsapp} onClick={redirectTo('https://wa.me/14379860390')} className='cursor-pointer hover:scale-125' />
           </div>
 
 
