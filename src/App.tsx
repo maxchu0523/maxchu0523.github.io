@@ -22,6 +22,10 @@ function App() {
   const scrollToProject = () => { projectRef.current?.scrollIntoView({ behavior: 'smooth' }) };
   const scrollToContact = () => { contactRef.current?.scrollIntoView({ behavior: 'smooth' }) };
 
+  const onClickMoreAboutMe = () => { 
+    // TODO onClickMoreAboutMe to open MoreAboutMe
+   };
+
 
   const redirectTo = (url: string) => () => {
     window.open(url, '_blank');
@@ -68,6 +72,7 @@ function App() {
 
             <div className='flex flex-row flex-wrap text-white subpixel-antialiased font-mono gap-4'>
               {/* <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToAboutMe}>About</div> */}
+              {/* <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToProject}>More About Me</div> */}
               <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToProject}>Works & Projects</div>
               <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToContact}>Contact</div>
             </div>
@@ -92,8 +97,8 @@ function App() {
                 <div className="collapse-title contentText text-lg font-bold md:text-xl bg-orange-500 text-white peer-checked:bg-orange-500 peer-checked:text-white">
                   More About Me
                 </div>
-                <div className="collapse-content contentText bg-primary bg-orange-500 text-white peer-checked:bg-orange-500 peer-checked:text-white">
-                  <p className='py-4'>Born and raised in Hong Kong🇭🇰, now living in Toronto🇨🇦</p>
+                <div className="collapse-content contentText bg-orange-500 text-white peer-checked:bg-orange-500 peer-checked:text-white">
+                  <p className='py-4'>Born and raised in Hong Kong 🇭🇰 , Studied in Finland 🇫🇮 , Now living in Toronto 🇨🇦 </p>
                   <p className='underline underline-offset-2 '>Things I love</p>
                   <li>Learning Japanese 🇯🇵</li>
                   <li>Travelling 🧳</li>
