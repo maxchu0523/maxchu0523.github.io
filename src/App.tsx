@@ -44,62 +44,62 @@ function App() {
 
       <div className='bg-gray-900 w-min-screen w-full'>
 
-        <div className=' min-h-screen sm:h-min-screen md:flex flex-wrap py-42'>
-          <div className='pl-4 py-4 md:pl-28 md:py-24 basis-1/2' >
+        <div className=' min-h-screen xl:h-min-screen xl:flex flex-wrap py-42'>
+          <div className='xl:basis-1/2' >
+
+            <div className='px-8 py-8 xl:py-12 xl:px-16 '>
+              <div className='headerText text-left py-8'>
+                <div className='text-white'>Web Developer,</div>
+                <div className='text-orange-500'>Max</div>
+              </div>
+              <div className='contentText text-left  py-4'>
+                <p>Welcome to my page! I love exploring and using new technologies. I also enjoy seeing users interact with my work. </p>
+
+              </div>
+
+              <div className='py-4 contentText'>
+                <p className=' underline underline-offset-2 '>Tools I use</p>
+                <div className='box=content flex gap-4 flex-wrap py-2'>
+                  <div>React</div>
+                  <div>Angular</div>
+                  <div>JavaScript</div>
+                  <div>Php</div>
+                  <div>Java</div>
+                  <div>C#</div>
+                </div>
+              </div>
 
 
-            <div className='headerText text-left py-8'>
-              <div className='text-white'>Web Developer,</div>
-              <div className='text-orange-500'>Max</div>
-            </div>
-            <div className='contentText text-left  py-4'>
-              <p>Welcome to my page! I love exploring and using new technologies. I also enjoy seeing users interact with my work. </p>
+              <div className='flex flex-row flex-wrap text-white subpixel-antialiased font-mono gap-4'>
+                {/* <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToAboutMe}>About</div> */}
+                {/* <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToProject}>More About Me</div> */}
+                <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToProject}>Works & Projects</div>
+                <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToContact}>Contact</div>
+              </div>
 
-            </div>
-
-            <div className='py-4 contentText'>
-              <p className=' underline underline-offset-2 '>Tools I use</p>
-              <div className='box=content flex gap-4 flex-wrap py-2'>
-                <div>React</div>
-                <div>Angular</div>
-                <div>JavaScript</div>
-                <div>Php</div>
-                <div>Java</div>
-                <div>C#</div>
+              <div className='flex flex-row flex-wrap text-white subpixel-antialiased font-mono gap-5 py-4 y-4'>
+                <FontAwesomeIcon icon={faLinkedinIn} onClick={redirectTo('https://www.linkedin.com/in/max-yat-long-chu-06b944181/')} className='cursor-pointer hover:scale-125 ' />
+                <FontAwesomeIcon icon={faGithub} onClick={redirectTo('https://github.com/maxchu0523')} className='cursor-pointer hover:scale-125' />
               </div>
             </div>
-
-
-            <div className='flex flex-row flex-wrap text-white subpixel-antialiased font-mono gap-4'>
-              {/* <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToAboutMe}>About</div> */}
-              {/* <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToProject}>More About Me</div> */}
-              <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToProject}>Works & Projects</div>
-              <div className='min-w-24 border-2 my-1 px-3 cursor-pointer hover:border-orange-500' onClick={scrollToContact}>Contact</div>
-            </div>
-
-            <div className='flex flex-row flex-wrap text-white subpixel-antialiased font-mono gap-5 py-4 y-4'>
-              <FontAwesomeIcon icon={faLinkedinIn} onClick={redirectTo('https://www.linkedin.com/in/max-yat-long-chu-06b944181/')} className='cursor-pointer hover:scale-125 ' />
-              <FontAwesomeIcon icon={faGithub} onClick={redirectTo('https://github.com/maxchu0523')} className='cursor-pointer hover:scale-125' />
-            </div>
-
           </div>
 
 
 
           {/* <p>Full-Stack Web Developer, ex-Motorcyclist, still a enthusiast</p> */}
 
-          <div className='basis-1/2'>
+          <div className='xl:basis-1/2'>
 
 
-            <div className='px-4 py-4 md:py-32 md:px-32 ' ref={aboutMeRef} >
+            <div className='px-8 py-8 xl:py-12 xl:px-16 ' ref={aboutMeRef} >
               <div className="collapse collapse-plus " onClick={scrollToAboutMe}>
                 <input type="checkbox" className="peer" />
-                <div className="collapse-title contentText text-lg font-bold md:text-xl bg-orange-500 text-white peer-checked:bg-orange-500 peer-checked:text-white">
+                <div className="collapse-title contentText text-lg font-bold xl:text-xl bg-orange-500 text-white peer-checked:bg-orange-500 peer-checked:text-white">
                   More About Me
                 </div>
                 <div className="collapse-content contentText bg-orange-500 text-white peer-checked:bg-orange-500 peer-checked:text-white">
                   <p className='py-4'>Born and raised in Hong Kong 🇭🇰 , Studied in Finland 🇫🇮 , Now living in Toronto 🇨🇦 </p>
-                  <p className='underline underline-offset-2 '>Things I love</p>
+                  <p className='underline underline-offset-2 '>Things I love 😎</p>
                   <li>Learning Japanese 🇯🇵</li>
                   <li>Travelling 🧳</li>
                   <li>Working on UI/UX 🖥️</li>
@@ -119,15 +119,15 @@ function App() {
             <p className='text-white'>About Me</p>
           </div>
 
-          <div className='md:flex'>
+          <div className='xl:flex'>
             <div className='contentText text-left basis-1/2 py-8'>
-              <div className='px-4 md:px-28'>
+              <div className='px-4 xl:px-28'>
                 <p>Hi, I am Max, a Web developer in Toronto. I enjoy participating in all aspects of the development process and exploring new cool technologies. UI/UX is also one of my favourite things. Seeing users interact with my work gives me a sense of accomplishment</p>
               </div>
             </div>
 
             <div className='contentText text-left basis-1/2 py-8'>
-              <div className='px-4 md:px-28'>
+              <div className='px-4 xl:px-28'>
                 <p className=' underline underline-offset-2'>Tools I use</p>
                 <div className='box=content flex gap-4 flex-wrap py-2'>
                   <div className='bg-gray-600'>React</div>
@@ -149,7 +149,7 @@ function App() {
             <p>Works & Projects</p>
           </div>
 
-          <div className='md:flex flex-wrap flex-row justify-start subpixel-antialiased font-mono content-center pl-4 pr-4'>
+          <div className='sm:flex flex-wrap flex-row justify-start subpixel-antialiased font-mono content-center pl-4 pr-4'>
 
             {/* <div className='basis-1/4 pb-8'>
               <img className='h-48 rounded-md  w-max my-4' src={todoList} onClick={redirectTo('/to-do-list')}></img>
@@ -158,7 +158,7 @@ function App() {
                 <p>A experimental todo list build with React, Redux and Tailwindcss</p>
               </div>
             </div> */}
-            <div className='basis-1/3 pb-4 md:p-16'>
+            <div className='sm:basis-1/2 xl:basis-1/3 p-8 xl:p-16'>
               <ProjectCard
                 projectName={"My Podium"} projectDesription={"Module-based International Supply Chain Management IT platform"}
                 sitePath={"https://www.oocllogistics.com/eng/ourservices/eservices/podium/Pages/default.aspx"}
@@ -167,7 +167,7 @@ function App() {
               ></ProjectCard>
             </div>
 
-            <div className='basis-1/3 pb-4 md:p-16'>
+            <div className='sm:basis-1/2 basis-1/2 xl:basis-1/3 p-8 xl:p-16'>
               <ProjectCard
                 projectName={"My Website"} projectDesription={"The site you are browsing, Bravo!"}
                 sitePath={"https://maxchu0523.github.io"}
@@ -177,7 +177,7 @@ function App() {
               ></ProjectCard>
             </div>
 
-            <div className='basis-1/3 pb-4 md:p-16'>
+            <div className='sm:basis-1/2 xl:basis-1/3 p-8 xl:p-16'>
               <ProjectCard
                 projectName={"Missionary Holiday"} projectDesription={"Grasp all the information related to christian mission trips, offering trips ranging from two months to two years"}
                 sitePath={"https://actnowmh.com/"}
@@ -186,7 +186,7 @@ function App() {
               ></ProjectCard>
             </div>
 
-            <div className='basis-1/3 pb-4 md:p-16'>
+            <div className='sm:basis-1/2 xl:basis-1/3 p-8 xl:p-16'>
               <ProjectCard
                 projectName={"Battle Of Hong Kong"} projectDesription={"A website that provides information and infographic about the Battle of Hong Kong during World War II."}
                 sitePath={"https://maxchu0523.github.io/Battle-of-Hong-Kong/"}
@@ -196,7 +196,7 @@ function App() {
               ></ProjectCard>
             </div>
 
-            <div className='basis-1/3 pb-4 md:p-16'>
+            <div className='sm:basis-1/2 xl:basis-1/3 p-8 xl:p-16'>
               <ProjectCard
                 projectName={"Harilela VIP"} projectDesription={"A private VIP App for friends and family of the Harilela Family to enjoy benefits and discounts at the Harilela Hotels in Hong Kong"}
                 sitePath={"https://apps.apple.com/us/app/harilela-vip/id1571846151"}
