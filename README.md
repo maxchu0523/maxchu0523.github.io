@@ -1,46 +1,24 @@
-# Getting Started with Create React App
+# Max's Portfolio Site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Max's portfolio site! 👋
 
-## Available Scripts
+I'm excited to have you here and showcase my projects and skills. Feel free to explore the site and discover the work I've been involved in.
 
-In the project directory, you can run:
+You can access the site by visiting the following URL: [https://maxchu0523.github.io/](https://maxchu0523.github.io/)
 
-### `npm start`
+## Tech Stack and Responsive Design
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **React**: It enables the create reusable UI components such as the project card, making the site more modular and maintainable.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Tailwind CSS**: A utility-first CSS framework that provides a set of pre-defined classes. I cloud rapidly build custom user interfaces.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The combination of React and Tailwind CSS allows for efficient development and ensures that the site adapts beautifully to various screen sizes, including desktops, tablets, and mobile devices.
 
-### `npm run build`
+## Explore My Projects and Skills
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I invite you to explore my projects, dive into my skills, and get a glimpse of what I'm passionate about. Don't hesitate to reach out if you have any questions, feedback, or collaboration opportunities. You can find my contact information on the portfolio site or [Mail Ms](mailto:maxchu0523@gmail.com)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Once again, welcome to my portfolio site, and enjoy your visit!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Max
