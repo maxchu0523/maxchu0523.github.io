@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.9171f8db.css",
-    "main.js": "/static/js/main.99973ec0.js",
+    "main.css": "/static/css/main.ea7cdbfe.css",
+    "main.js": "/static/js/main.75b5f327.js",
     "static/js/787.3ba5e41c.chunk.js": "/static/js/787.3ba5e41c.chunk.js",
     "static/media/battleOfHongKong.png": "/static/media/battleOfHongKong.b10153ba3c358defac85.png",
     "static/media/myPodium.png": "/static/media/myPodium.c3b302ea2a3ff5b52cbc.png",
@@ -10,12 +10,12 @@
     "static/media/motorcycling.jpg": "/static/media/motorcycling.06599712ed12c1a0d7de.jpg",
     "static/media/maxPorfolio.png": "/static/media/maxPorfolio.6123094fe963d7f23d7c.png",
     "index.html": "/index.html",
-    "main.9171f8db.css.map": "/static/css/main.9171f8db.css.map",
-    "main.99973ec0.js.map": "/static/js/main.99973ec0.js.map",
+    "main.ea7cdbfe.css.map": "/static/css/main.ea7cdbfe.css.map",
+    "main.75b5f327.js.map": "/static/js/main.75b5f327.js.map",
     "787.3ba5e41c.chunk.js.map": "/static/js/787.3ba5e41c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9171f8db.css",
-    "static/js/main.99973ec0.js"
+    "static/css/main.ea7cdbfe.css",
+    "static/js/main.75b5f327.js"
   ]
 }
