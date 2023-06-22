@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faReact, faPhp, faLinkedinIn, faGithub, faAngular, faJava, faJs, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import { faReact, faPhp, faLinkedin, faGithub, faAngular, faJava, faJs } from '@fortawesome/free-brands-svg-icons'
 import myPodium from '../src/media/myPodium.png';
 import actnow from '../src/media/actnowmh.png';
 import harilelaVip from '../src/media/harilelaVip.png';
@@ -32,9 +31,6 @@ function App() {
   }
 
 
-  useEffect(() => {
-    document.title = 'Max Chu';
-  }, [])
 
 
   return (
@@ -60,12 +56,18 @@ function App() {
               <div className='py-4 contentText'>
                 <p className=' underline underline-offset-2 '>Tools I use</p>
                 <div className='box=content flex gap-4 flex-wrap py-2'>
-                  <div>React</div>
-                  <div>Angular</div>
+                  <div>HTML</div>
+                  <div>CSS</div>
                   <div>JavaScript</div>
-                  <div>Php</div>
-                  <div>Java</div>
+                  <div>React</div>
+                  <div>NextJs</div>
+                  <div>Angular</div>
                   <div>C#</div>
+                  <div>Java</div>
+                  <div>Php</div>
+                  <div>Spring</div>
+                  <div>ASP.NET</div>
+                  <div>CakePhp</div>
                 </div>
               </div>
 
@@ -78,7 +80,7 @@ function App() {
               </div>
 
               <div className='flex flex-row flex-wrap text-white subpixel-antialiased font-mono gap-5 py-4 y-4'>
-                <FontAwesomeIcon icon={faLinkedinIn} onClick={redirectTo('https://www.linkedin.com/in/max-yat-long-chu-06b944181/')} className='cursor-pointer hover:scale-125 ' />
+                <FontAwesomeIcon icon={faLinkedin} onClick={redirectTo('https://www.linkedin.com/in/max-yat-long-chu-06b944181/')} className='cursor-pointer hover:scale-125 ' />
                 <FontAwesomeIcon icon={faGithub} onClick={redirectTo('https://github.com/maxchu0523')} className='cursor-pointer hover:scale-125' />
               </div>
             </div>
@@ -161,7 +163,7 @@ function App() {
             <div className='sm:basis-1/2 xl:basis-1/3 p-8 xl:p-16'>
               <ProjectCard
                 projectName={"My Podium"} projectDesription={"Module-based International Supply Chain Management IT platform"}
-                sitePath={"https://www.oocllogistics.com/eng/ourservices/eservices/podium/Pages/default.aspx"}
+                sitePath={"https://mypodium.oocllogistics.com/mypodium/pub/common/podium/cs_up_web_login.jsf"}
                 imagePath={myPodium}
                 techStackIcons={[<FontAwesomeIcon icon={faAngular} size="xl" />, <FontAwesomeIcon icon={faJava} size="xl" />, <FontAwesomeIcon icon={faJs} size="xl" />]}
               ></ProjectCard>
@@ -224,7 +226,7 @@ function App() {
             </a>
           </div>
           <div className='flex flex-row flex-wrap text-white subpixel-antialiased font-mono gap-5 py-4 y-4 justify-center'>
-            <FontAwesomeIcon icon={faLinkedinIn} onClick={redirectTo('https://www.linkedin.com/in/max-yat-long-chu-06b944181/')} className='cursor-pointer hover:scale-125' />
+            <FontAwesomeIcon icon={faLinkedin} onClick={redirectTo('https://www.linkedin.com/in/max-yat-long-chu-06b944181/')} className='cursor-pointer hover:scale-125' />
             <FontAwesomeIcon icon={faGithub} onClick={redirectTo('https://github.com/maxchu0523')} className='cursor-pointer hover:scale-125' />
           </div>
 
