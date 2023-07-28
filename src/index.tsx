@@ -7,7 +7,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import ToDoList from './pages/to-do-list';
+import ToDoList from './components/ToDoList';
 import {Provider} from 'react-redux'
 import store from "./redux/store";
 

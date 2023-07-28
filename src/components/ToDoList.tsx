@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   addTodos,
 } from "../redux/reducer";
-import TodoItem from '../components/to-do-item'
+import TodoItem from './ToDoItem'
 import { v4 as uuidv4 } from 'uuid';
 import { ITodoItem } from "../interface";
 
