@@ -50,7 +50,7 @@ export function Projects({ lastItemRef }: ProjectsProps) {
       >
         {projects.map((project, index) => (
           <a
-            key={project.num}
+            key={project.href}
             ref={index === projects.length - 1 ? lastItemRef : undefined}
             href={project.href}
             target="_blank"
@@ -59,7 +59,7 @@ export function Projects({ lastItemRef }: ProjectsProps) {
             onMouseEnter={() => project.preview && setPreviewSrc(project.preview)}
             onMouseLeave={() => setPreviewSrc(null)}
           >
-            <span className={styles.num}>{project.num}</span>
+            <span className={styles.num}>{String(index + 1).padStart(3, '0')}</span>
             <span className={styles.body}>
               <span className={styles.name}>{project.name}</span>
               <span className={styles.desc}>{project.description}</span>

@@ -7,7 +7,6 @@ import maxPortfolio from '../assets/projects/maxPortfolio.jpg';
 
 export const projects: Project[] = [
   {
-    num: '001',
     name: 'My Podium',
     description: 'International supply-chain management platform',
     tech: 'ANGULAR · JAVA',
@@ -15,7 +14,6 @@ export const projects: Project[] = [
     preview: myPodium,
   },
   {
-    num: '002',
     name: 'Harilela VIP',
     description: 'Private VIP app for the Harilela Hotels, Hong Kong',
     tech: 'ANGULAR · PHP',
@@ -23,7 +21,6 @@ export const projects: Project[] = [
     preview: harilelaVip,
   },
   {
-    num: '003',
     name: 'Missionary Holiday',
     description: 'Everything about Christian mission trips, in one place',
     tech: 'REACT · PHP',
@@ -31,7 +28,6 @@ export const projects: Project[] = [
     preview: actnowmh,
   },
   {
-    num: '004',
     name: 'Battle of Hong Kong',
     description: 'Interactive history & infographics, WWII Hong Kong',
     tech: 'REACT · JS',
@@ -39,7 +35,6 @@ export const projects: Project[] = [
     preview: battleOfHongKong,
   },
   {
-    num: '005',
     name: 'This Website',
     description: "The site you're browsing. Bravo!",
     tech: 'REACT · TS',
