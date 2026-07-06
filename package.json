@@ -4,10 +4,14 @@
   "version": "2.0.0",
   "type": "module",
   "homepage": "https://maxchu0523.github.io",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
