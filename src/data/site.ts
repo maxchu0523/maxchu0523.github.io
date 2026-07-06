@@ -7,6 +7,6 @@ export const site = {
   email: 'maxchu0523@gmail.com',
   github: 'https://github.com/maxchu0523',
   githubHandle: '@maxchu0523',
-  linkedin: 'https://www.linkedin.com/in/max-yat-long-chu-06b944181/',
-  linkedinName: 'Max Yat Long Chu',
+  linkedin: 'https://www.linkedin.com/in/max-chu-06b944181/',
+  linkedinName: 'Max Chu',
 } as const;
