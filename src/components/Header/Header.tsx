@@ -1,34 +1,33 @@
 import { useEffect, useRef } from 'react';
-import type { Theme, ThemeChoice } from '../../hooks/useTheme';
+import type { ThemeChoice } from '../../hooks/useTheme';
 import { site } from '../../data/site';
 import { ThemeSelect } from './ThemeSelect';
 import styles from './Header.module.css';
 
 interface HeaderProps {
-  theme: Theme;
   choice: ThemeChoice;
   onChoiceChange: (choice: ThemeChoice) => void;
 }
 
 /** Sticky header whose glass background intensifies as the page scrolls. */
-export function Header({ theme, choice, onChoiceChange }: HeaderProps) {
+export function Header({ choice, onChoiceChange }: HeaderProps) {
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const navRGB = theme === 'light' ? '234,238,243' : '6,13,22';
-    const lineRGB = theme === 'light' ? '11,22,34' : '255,255,255';
     let raf = 0;
 
+    // Drive only the scroll-dependent alpha/blur via CSS variables; the base
+    // colors live in the stylesheet (--nav-rgb / --line-rgb) so they follow
+    // the theme automatically without duplicating values here.
     const onScroll = () => {
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
         const nav = navRef.current;
         if (!nav) return;
         const p = Math.min(window.scrollY / 220, 1);
-        nav.style.background = `rgba(${navRGB},${(p * 0.55).toFixed(3)})`;
-        nav.style.setProperty('backdrop-filter', `blur(${(p * 16).toFixed(1)}px)`);
-        nav.style.setProperty('-webkit-backdrop-filter', `blur(${(p * 16).toFixed(1)}px)`);
-        nav.style.borderBottomColor = `rgba(${lineRGB},${(p * 0.1).toFixed(3)})`;
+        nav.style.setProperty('--nav-alpha', (p * 0.55).toFixed(3));
+        nav.style.setProperty('--nav-blur', `${(p * 16).toFixed(1)}px`);
+        nav.style.setProperty('--line-alpha', (p * 0.1).toFixed(3));
       });
     };
 
@@ -38,7 +37,7 @@ export function Header({ theme, choice, onChoiceChange }: HeaderProps) {
       window.removeEventListener('scroll', onScroll);
       cancelAnimationFrame(raf);
     };
-  }, [theme]);
+  }, []);
 
   return (
     <header ref={navRef} className={styles.header}>

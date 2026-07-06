@@ -1,27 +1,40 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { projects } from '../../data/projects';
 import { site } from '../../data/site';
 import { useInView } from '../../hooks/useInView';
 import styles from './Projects.module.css';
 
-export function Projects() {
+// Horizontal offset between the cursor and the preview card.
+const PREVIEW_GAP = 28;
+
+interface ProjectsProps {
+  lastItemRef?: React.Ref<HTMLAnchorElement>;
+}
+
+export function Projects({ lastItemRef }: ProjectsProps) {
   const [labelRef, labelInView] = useInView<HTMLDivElement>();
   const [listRef, listInView] = useInView<HTMLDivElement>();
 
   const previewRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef(0);
   const [previewSrc, setPreviewSrc] = useState<string | null>(null);
 
   const year = new Date().getFullYear();
 
+  useEffect(() => () => cancelAnimationFrame(rafRef.current), []);
+
   const movePreview = (e: React.MouseEvent) => {
-    const el = previewRef.current;
-    if (!el) return;
-    const width = 232;
-    const gap = 28;
-    let x = e.clientX + gap;
-    if (x + width > window.innerWidth - 12) x = e.clientX - gap - width;
-    el.style.left = `${x}px`;
-    el.style.top = `${e.clientY}px`;
+    const { clientX, clientY } = e;
+    cancelAnimationFrame(rafRef.current);
+    rafRef.current = requestAnimationFrame(() => {
+      const el = previewRef.current;
+      if (!el) return;
+      const width = el.offsetWidth;
+      let x = clientX + PREVIEW_GAP;
+      if (x + width > window.innerWidth - 12) x = clientX - PREVIEW_GAP - width;
+      el.style.left = `${x}px`;
+      el.style.top = `${clientY}px`;
+    });
   };
 
   return (
@@ -38,11 +51,11 @@ export function Projects() {
         {projects.map((project, index) => (
           <a
             key={project.num}
+            ref={index === projects.length - 1 ? lastItemRef : undefined}
             href={project.href}
             target="_blank"
             rel="noreferrer"
             className={styles.row}
-            data-last-work-item={index === projects.length - 1 ? '' : undefined}
             onMouseEnter={() => project.preview && setPreviewSrc(project.preview)}
             onMouseLeave={() => setPreviewSrc(null)}
           >

@@ -37,7 +37,7 @@ export function Hero() {
   const lit = useReadyToAnimate();
 
   return (
-    <header className={styles.hero}>
+    <section className={styles.hero} aria-label="Intro">
       <h1 className={lit ? `${styles.title} ${styles.lit}` : styles.title}>
         {site.name}
         <span className={styles.slash}>/</span>
@@ -60,6 +60,6 @@ export function Hero() {
           </a>
         </div>
       </div>
-    </header>
+    </section>
   );
 }

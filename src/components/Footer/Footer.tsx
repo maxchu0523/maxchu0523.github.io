@@ -6,7 +6,12 @@ import styles from './Footer.module.css';
 
 type RideMode = 'autoplay' | 'scrolldriven';
 
-export function Footer() {
+interface FooterProps {
+  /** The last work item in Projects; the ride starts once it's fully in view. */
+  lastItemRef: React.RefObject<HTMLAnchorElement | null>;
+}
+
+export function Footer({ lastItemRef }: FooterProps) {
   const [topRef, topInView] = useInView<HTMLDivElement>();
   const footerRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -44,7 +49,7 @@ export function Footer() {
     // live layout each frame, so any screen size works the same way.
     const rideBounds = () => {
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      const lastWork = document.querySelector('[data-last-work-item]');
+      const lastWork = lastItemRef.current;
       if (!lastWork) return { start: 0, end: maxScroll };
       const itemBottom = lastWork.getBoundingClientRect().bottom + window.scrollY;
       const start = Math.min(Math.max(itemBottom - window.innerHeight, 0), maxScroll);
@@ -126,7 +131,7 @@ export function Footer() {
       io?.disconnect();
       cancelAnimationFrame(raf);
     };
-  }, []);
+  }, [lastItemRef]);
 
   return (
     <footer ref={footerRef} className={styles.footer}>

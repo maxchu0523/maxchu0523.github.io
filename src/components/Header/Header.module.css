@@ -4,7 +4,12 @@
   left: 0;
   right: 0;
   z-index: 50;
-  border-bottom: 1px solid transparent;
+  /* Alpha/blur are driven per-scroll-frame via inline CSS vars set in
+     Header.tsx; the base colors come from the themed --nav-rgb / --line-rgb. */
+  background: rgba(var(--nav-rgb), var(--nav-alpha, 0));
+  backdrop-filter: blur(var(--nav-blur, 0px));
+  -webkit-backdrop-filter: blur(var(--nav-blur, 0px));
+  border-bottom: 1px solid rgba(var(--line-rgb), var(--line-alpha, 0));
   transition:
     background 0.4s ease,
     border-color 0.4s ease;
