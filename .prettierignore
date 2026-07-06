@@ -1,0 +1,5 @@
+dist
+node_modules
+Archive
+design
+package-lock.json

@@ -1,0 +1,80 @@
+.hero {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding: 14vh var(--gutter) 0;
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(40px, 6vw, 84px);
+  line-height: 0.92;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  /* Always-on neon glow so the sign reads as lit even when the flicker /
+     hum animations are suppressed (e.g. prefers-reduced-motion). */
+  text-shadow: var(--neon-glow);
+  animation:
+    neonOn 2.4s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both,
+    neonHum 4.5s ease-in-out 2.7s infinite;
+  /* Hold at the dark 0% frame until React signals fonts are loaded and the
+     first paint is done — otherwise hydration jank and the webfont swap
+     eat the flicker frames and only the last flash is visible. */
+  animation-play-state: paused;
+}
+
+.lit {
+  animation-play-state: running;
+}
+
+.slash {
+  color: var(--accent);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 40px;
+  padding-bottom: 32px;
+  border-bottom: 2px solid var(--text);
+}
+
+.tagline {
+  margin: 0;
+  max-width: 480px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+.links {
+  display: flex;
+  gap: 28px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+.link {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 3px;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title {
+    animation: none;
+  }
+}

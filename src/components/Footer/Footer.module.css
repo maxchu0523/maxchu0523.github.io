@@ -1,0 +1,170 @@
+.footer {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding: 80px var(--gutter) 40px;
+  box-sizing: border-box;
+}
+
+.topRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+
+.topLabel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: var(--faint);
+}
+
+.topHint {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--faint);
+}
+
+.bounce {
+  display: inline-block;
+  animation: arrowBounce 1.3s ease-in-out infinite;
+}
+
+@keyframes arrowBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bounce {
+    animation: none;
+  }
+}
+
+/* The bike rides this track / white line as the page scrolls. */
+.track {
+  position: relative;
+  height: 170px;
+}
+
+.road {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 46px;
+  height: 2px;
+  background: var(--text);
+}
+
+.bike {
+  position: absolute;
+  bottom: 47px;
+  left: 0;
+  height: 96px;
+  width: auto;
+  image-rendering: pixelated;
+  will-change: transform;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.28));
+}
+
+.contact {
+  position: absolute;
+  right: 190px;
+  bottom: 60px;
+  display: flex;
+  gap: 26px;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: flex-end;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.colLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--faint);
+}
+
+.colLink {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+  transition: color 0.2s ease;
+}
+
+.colLink:hover {
+  color: var(--accent);
+}
+
+.bottomRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 18px;
+}
+
+.bottomBrand,
+.bottomMeta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--faint);
+}
+
+.slash {
+  color: var(--accent);
+}
+
+/* Phone / small tablet: keep the contact row horizontal on top of the
+   divider (just smaller), and shrink the bike so all three columns fit. The
+   bike still rides left→right and reveals them one by one. The right inset
+   keeps the columns clear of the bike's final resting position. */
+@media (max-width: 720px) {
+  .bike {
+    height: 44px;
+  }
+  .contact {
+    right: 76px;
+    gap: 12px;
+  }
+  .colLabel {
+    font-size: 7px;
+  }
+  .colLink {
+    font-size: 8.5px;
+    padding-bottom: 1px;
+  }
+}
+
+@media (max-width: 380px) {
+  .contact {
+    right: 66px;
+    gap: 9px;
+  }
+  .colLink {
+    font-size: 8px;
+  }
+}
