@@ -17,6 +17,8 @@ npm install      # also installs Husky git hooks (via "prepare")
 npm run dev      # start the dev server
 npm run build    # type-check + production build to dist/
 npm run preview  # preview the production build locally
+npm run typecheck # TypeScript check without building
+npm test         # run the vitest suite once (test:watch for watch mode)
 npm run lint     # ESLint
 npm run format   # Prettier write
 ```
