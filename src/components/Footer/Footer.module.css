@@ -27,6 +27,9 @@
   color: var(--faint);
 }
 
+/* Scroll hint arrow bounces up and down to catch the eye. Plays under
+   reduced motion too (owner decision, like the neon flicker): it's a small,
+   slow movement and the hint is functional. */
 .bounce {
   display: inline-block;
   animation: arrowBounce 1.3s ease-in-out infinite;
@@ -35,16 +38,10 @@
 @keyframes arrowBounce {
   0%,
   100% {
-    transform: translateY(0);
+    transform: translateY(-3px);
   }
   50% {
-    transform: translateY(5px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .bounce {
-    animation: none;
+    transform: translateY(4px);
   }
 }
 
