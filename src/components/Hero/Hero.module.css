@@ -73,8 +73,16 @@
   color: var(--accent);
 }
 
+/* Reduced motion: the one-time turn-on flicker still plays (a brief brand
+   moment, matching the design), but the infinite hum pulse is dropped.
+   The shorthand resets play-state, so the paused/.lit gating is restated. */
 @media (prefers-reduced-motion: reduce) {
   .title {
-    animation: none;
+    animation: neonOn 2.4s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+    animation-play-state: paused;
+  }
+
+  .lit {
+    animation-play-state: running;
   }
 }

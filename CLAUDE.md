@@ -35,7 +35,7 @@ Single-page portfolio: Vite + React 19 + TypeScript (strict). No router, no stat
 - `autoplay` — on tall viewports/short pages with no runway, the ride tween plays once when the footer enters view ("ENJOY the ride").
   The mode is re-chosen on resize via `hasRunway()`.
 
-**Animation conventions:** scroll/pointer handlers batch DOM writes through `requestAnimationFrame` (cancelled on cleanup). Scroll-reveal uses the `useInView` hook plus the global `.reveal` / `.is-visible` classes. The Hero neon flicker is held paused until fonts are loaded and two frames have painted (`useReadyToAnimate`) so the flicker isn't eaten by startup jank. All motion respects `prefers-reduced-motion`.
+**Animation conventions:** scroll/pointer handlers batch DOM writes through `requestAnimationFrame` (cancelled on cleanup). Scroll-reveal uses the `useInView` hook plus the global `.reveal` / `.is-visible` classes. The Hero neon flicker is held paused until fonts are loaded and two frames have painted (`useReadyToAnimate`) so the flicker isn't eaten by startup jank. Motion respects `prefers-reduced-motion` with one deliberate exception: the Hero's one-time neon turn-on flicker plays for everyone (owner decision — it's a brief brand moment and part of the design); only the infinite hum pulse is disabled under reduced motion.
 
 ## Design source
 
