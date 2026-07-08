@@ -3,6 +3,7 @@ import myPodium from '../assets/projects/myPodium.jpg';
 import harilelaVip from '../assets/projects/harilelaVip.jpg';
 import actnowmh from '../assets/projects/actnowmh.jpg';
 import battleOfHongKong from '../assets/projects/battleOfHongKong.jpg';
+import scout from '../assets/projects/scout.jpg';
 import maxPortfolio from '../assets/projects/maxPortfolio.jpg';
 
 export const projects: Project[] = [
@@ -33,6 +34,13 @@ export const projects: Project[] = [
     tech: 'REACT · JS',
     href: 'https://maxchu0523.github.io/Battle-of-Hong-Kong/',
     preview: battleOfHongKong,
+  },
+  {
+    name: 'Scout',
+    description: 'nmap for MCP/AI services — scan, verify & invoke local AI tools',
+    tech: 'NODE · TS',
+    href: 'https://github.com/maxchu0523/scout',
+    preview: scout,
   },
   {
     name: 'This Website',
