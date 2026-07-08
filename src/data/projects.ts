@@ -1,12 +1,27 @@
 import type { Project } from '../types';
+import equifax from '../assets/projects/equifax.jpg';
+import tdClari from '../assets/projects/tdClari.jpg';
 import myPodium from '../assets/projects/myPodium.jpg';
 import harilelaVip from '../assets/projects/harilelaVip.jpg';
 import actnowmh from '../assets/projects/actnowmh.jpg';
-import battleOfHongKong from '../assets/projects/battleOfHongKong.jpg';
 import scout from '../assets/projects/scout.jpg';
 import maxPortfolio from '../assets/projects/maxPortfolio.jpg';
 
 export const projects: Project[] = [
+  {
+    name: 'Equifax',
+    description: 'Consumer credit monitoring & identity-protection platform',
+    tech: 'ANGULAR · TS',
+    href: 'https://www.equifax.ca/personal',
+    preview: equifax,
+  },
+  {
+    name: 'TD Clari',
+    description: 'In-app virtual banking assistant for the TD mobile app',
+    tech: 'ANGULAR · JAVA',
+    href: 'https://www.td.com/ca/en/personal-banking/how-to/td-app/clari',
+    preview: tdClari,
+  },
   {
     name: 'My Podium',
     description: 'International supply-chain management platform',
@@ -27,13 +42,6 @@ export const projects: Project[] = [
     tech: 'REACT · PHP',
     href: 'https://actnowmh.com/',
     preview: actnowmh,
-  },
-  {
-    name: 'Battle of Hong Kong',
-    description: 'Interactive history & infographics, WWII Hong Kong',
-    tech: 'REACT · JS',
-    href: 'https://maxchu0523.github.io/Battle-of-Hong-Kong/',
-    preview: battleOfHongKong,
   },
   {
     name: 'Scout',
